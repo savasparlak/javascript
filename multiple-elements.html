@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="card-header">
+<h3 class="card-title h3" id="title">Todo App 3</h3>
+</div>
+
+<ul id="task-list1">
+    <li class="task">Görev 1</li>
+    <li class="task">Görev 2</li>
+    <li class="task">Görev 3</li>
+</ul>
+
+<ul id="task-list2">
+    <li class="task">Görev 4</li>
+    <li class="task">Görev 5</li>
+    <li class="task">Görev 6</li>
+</ul>
+
+<script>
+let sonuc;
+
+//Not: Aşağıda className'i task olan listeden istenilen elementi döndürür.
+sonuc= document.getElementsByClassName("task")[0]; 
+sonuc= document.getElementsByClassName("task")[1];
+sonuc= document.getElementsByClassName("task")[5];
+
+//let taskList= document.getElementsByClassName("task"); 
+// Yukarıda className'i task olan elemanları taskList olarak tanımlanan
+//listeye atarak bir dizi oluşturur. Aşağıda ise döngü ile bu dizi console'a 
+//basılır.
+
+//  ul=document.getElementById("task-list1");
+//  taskList=ul.getElementsByTagName("li");
+
+//Yukarıda ise ul etiketlerinin idlerine göre bir kapsama direk ulaşılır ve
+//bu kapsamın içinde bulunan TagNamelerine göre listeye atılır ve sadece
+//bu kapsam console'a basılır ve stil özellikleri verilir. Ya da aşağıda tek satır
+//ile bu sadece belirli kapsam yazdırılabilir.
+
+taskList=document.querySelectorAll("#task-list1 li");
+//Belirli bir id'nin altındaki li etiketleri belirlendi ve bunlara işlem yapıldı.
+
+
+// for(let i=0;i<taskList.length;i++){
+// console.log(taskList[i]);
+// } //Bu 1. döngü yöntemi
+
+for(let task of taskList){
+console.log(task);
+}//bu 2. döngü yöntemi ve 'let task of taskList' ile elemanların
+//kendisi yazdırılır.
+
+// for(let task in taskList){
+// console.log(task);
+// }//bu 3. döngü yöntemi ve 'let task in taskList' ile elemanların
+//index numaraları yazdırılır.
+
+for(let task of taskList){
+task.style.color="blue"
+task.style.fontSize="20px"
+//task.innerText="item"; 
+}//dizideki elemanların style özellikleri ayarlanabilir.
+//Ancak döngü içinde noktadan sonra intellisense(kelime tamamlama)
+//çalışmıyor. Kendimiz tamamlıcaz.
+
+console.log(sonuc);
+</script>
+
+
+</body>
+</html>
