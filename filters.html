@@ -24,6 +24,24 @@
             text-decoration: line-through;
         }
 
+        .controls{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .filters span.active{
+        color:#3c87ff;
+        }
+
+        .filters span{
+            font-weight: 600;
+            margin-right: 5px;
+            font-size: 15px;
+            color:#444444;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 
@@ -49,7 +67,12 @@
                     </div>
                     
                     <div class="card mt-3">
-                        <div class="card-header">
+                        <div class="card-header controls">
+                            <div class="filters">
+                                <span onclick= "displayTasks()" class="active" id="all">Hepsi</span>
+                                <span onclick= "tamamlananlar()" id="completed">Tamamlananlar</span>
+                                <span onclick= "yapılacaklar()" id="pending">Yapılacaklar</span>
+                            </div>
                             <button id="btnClear" class="btn btn-danger btn-sm float-end">Temizle</button>
                         </div>
                         <ul id="task-list" class="list-group list-group-flush">
@@ -205,9 +228,14 @@
                 gorev.durum=durum;
             }
           }
-          console.log(gorevListesi);
+          
         }
-//Bu fonksiyona objenin kendisi "this" referans kelimesi ile geliyor. Yani metod ile bu input objesine ulaşabiliriz.
+        //Bu fonksiyona objenin kendisi "this" referans kelimesi ile geliyor. Yani metod ile bu input objesine ulaşabiliriz.
+
+        function tamamlananlar()
+        { 
+            
+        }
     </script>
 </body>
 
