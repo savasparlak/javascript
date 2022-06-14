@@ -124,7 +124,7 @@
 
         function deleteTask(id) {
  
-            let deletedId=id;
+            let deletedId;
             
             for(let index in gorevListesi) {
                 if(gorevListesi[index].id == id) {
@@ -141,7 +141,7 @@
 
             gorevListesi.splice(deletedId, 1);
             displayTasks();
-            console.log(gorevListesi.length);
+           
         }
 
       
