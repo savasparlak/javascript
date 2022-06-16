@@ -33,7 +33,7 @@
                     
                     <div class="card mt-3">
                         <div class="card-header">
-                            <button id="btnClear" class="btn btn-danger btn-sm float-end">Temizle</button>
+                            <button id="btnClear" class="btn btn-danger btn-sm">Temizle</button>
                         </div>
                         <ul id="task-list" class="list-group list-group-flush">
                             <li class="task list-group-item">
@@ -60,9 +60,10 @@
                 </div>
             </div>
         </div>
+        <p class="mt-3" id="demo">Buraya tıklanınca tarih gelecek</p>
     </div>
 
-
+    
     <script>
         
         document.querySelector("#btnAddNewTask").addEventListener("click", newTask );         
@@ -84,7 +85,7 @@
             // ul.insertAdjacentHTML("beforeend",li);    
                
             event.target.classList.add("btn-lg") 
-             
+            console.log(event.target)
             event.preventDefault(); 
         }
 
@@ -95,8 +96,32 @@
             
         //     event.preventDefault(); 
         //  }
+        
+        document.querySelector("#btnClear").addEventListener("click", clear);
+         
+        let soldaMI=true;
+            function clear(event){              
+               if(soldaMI){
+                event.target.classList.remove("float-start"); 
+                event.target.classList.add("float-end");                          
+                soldaMI=false;
+               }else
+               {    
+                event.target.classList.remove("float-end"); 
+                event.target.classList.add("float-start");                                   
+                soldaMI=true;
+               }
+               
+                event.preventDefault(); 
+            }
+            
 
+            document.getElementById('demo').addEventListener("click", ekle);
 
+            function ekle(event)
+            {
+            event.target.innerHTML=Date();
+            }
        
     </script>
 

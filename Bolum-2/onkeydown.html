@@ -8,10 +8,13 @@
 </head>
 <body>
     <p>Aşağıdaki input kutusuna klavyeden bir karakter giriniz.</p>
-    <input type="text" size="50px" onkeydown="myFunction(event)">
-    <p id="demo"></p>
+    <input type="text" size="50px" onkeydown= 'myFunction(event)'>
+    
+        <p id="demo"></p>
 
     <script>
+
+      
         function myFunction(event)
         { let x=event.key;
             document.querySelector("#demo").innerText="Input içine yazılan karakter:"+ x;
