@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // slice(); kendisine parametre olarak verilecek olan dizi aralığında bulunan değerleri kopyalayarak yeni bir dizi oluşturur.
+		// Oluşturduğu diziyi geri döndürür.
+ 
+		var dizi = ["ali", "veli", "kırklareli", "emret", "komutanım", "diyeceksiniz"];
+		document.write("Orjinal dizi : " + dizi + "<br>");
+		
+		// 2. indisden başlayarak (2. indis dahil) sonuna kadar olan tüm değerleri aldı ve yeni dizi oluşturdu.
+		var kopya = dizi.slice(2);
+		document.write("1. kopya dizi : " + kopya + "<br>");
+ 
+		// 2. indisden başlayarak (2. indis dahil), 5. indise kadar (5 hariç) olan tüm değerleri aldı ve yeni dizi oluşturdu.
+		var kopya2 = dizi.slice(2,5);
+		document.write("2. kopya dizi : " + kopya2 + "<br>");
+ 
+		// 2. indisden başlayarak (2. indis dahil), sonuncu değer hariç tüm değerleri aldı ve yeni dizi oluşturdu.
+		var kopya3 = dizi.slice(2,-1);
+		document.write("3. kopya dizi : " + kopya3 + "<br>");
+ 
+		// sondan başlayarak 4. indis ile sondan 2. indise kadar olan değerleri al ve yeni dizi oluştur. (-4 dahil, -2 hariç oluyor)
+		var kopya4 = dizi.slice(-4,-2);
+		document.write("4. kopya dizi : " + kopya4 + "<br>");
+ 
+		// sondan başlayarak 4. indis ile en sona kadar olan değerleri al ve yeni dizi oluştur. (-4 dahil)
+		var kopya5 = dizi.slice(-4);
+		document.write("5. kopya dizi : " + kopya5 + "<br>");
+        // NOT:Burada dikkat etmeniz gereken husus ilk parametrenin dahil, son parametrenin hariç olduğudur
+
+        //----------------------------DELETE FONKSİYONU----------------------------
+
+        // delete dizinin belirtilen elemanını siler ve yapısını değiştirmez. Belirtilen indisin numarası durur fakat içeriği boşalır.
+		
+		var dizi = ["savaş", "neval", "asya", "efe", "mahir"];
+		
+		document.write("silinmeden önce dizi : " + dizi + "<br>");
+ 
+		delete dizi[3];
+		
+		document.write("silindikten sonra dizi : " + dizi + "<br>");
+
+    //-------------------------------MAP() FONKSİYONU----------------------------------
+
+        let arr = [1, 2, 3, 4, 5];
+
+        let result = arr.map(function(elem) {
+            return elem * 2;
+        });
+    //normal function kullanarak yapımı
+        console.log(result);
+
+        let sonuc=arr.map((elem)=>elem*2);
+
+        console.log(sonuc);
+        //arrow function kullanarak yapımı
+
+        //---------------------------------filter() fonksiyonu------------------------------
+
+        function sayi(a) {
+        return a >= 2000;
+        }
+        //yukardaki fonksiyonun parametresi herhangi bir değişken olabilir. bu değişken aşağıdaki
+        //sayi fonksiyonunun filter fonksiyonunun içinde yer alması ile dizinin bir elemanını
+        //temsil ettiği anlamına gelmektedir.
+
+        var yil = [1990, 2000, 2016, 1985, 2021].filter(sayi);
+
+        console.log(yil);
+
+        var yil = [1990, 2000, 2016, 1985, 2021].filter(x=>x>=2000);
+
+        console.log(yil);
+
+        //---------------------------Bir Örnek--------------------------------
+
+        var dizi1 = [1, 2.718, Math.PI, 4, 'hello', 5];
+
+        var integer = dizi1.filter(value => Number.isInteger(value));
+
+        console.log(integer);
+
+        //yukardaki işlemde "value => Number.isInteger(value)" arrow function ile dizinin her bir elemanına
+        //bakılıyor ve tamsayı ise dizi filtereden geçirilerek integer adında yeni bir dizi oluşturuluyor.
+
+
+        //--------------------------REDUCE() FONKSİYONU----------------------------
+        //Aşağıdaki örneklerde dizinin içindeki elemanları toplamak için reduce() fonksiyonu kullanılarak işlem
+        //yapılmıştır.
+        const number = [25, 15, 20];
+
+        const sum = number.reduce((toplam, deger) => toplam + deger); 
+
+        console.log("Dizinin içindeki değerler toplamı : " + sum);
+
+        var number1 = [10, 20, 50];
+
+        var sum1 = number1.reduce( function(total, amount){
+        return total + amount
+        });
+
+        console.log("Dizinin içindeki değerler toplamı : " + sum1);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+      // const sayilar=[1,3,5,7,9,11];      
+      
+      // const tekSayilar=[];
+
+      // for(let sayi of sayilar)
+      // {
+      //   if(sayi%2==1)
+      //   {
+      //       tekSayilar.push(sayi);
+      //   }
+      // }
+
+      // console.log(tekSayilar);
+      
+      //ES6
+      // const sayilar=[1,3,5,7,9,11];        
+        
+      // const tekSayilar= sayilar.filter((sayi)=> sayi%2==1);
+
+      // console.log(tekSayilar);
+      
+    var dizi = [
+			{meyve: "elma", mevsim: "yaz"},
+			{meyve: "armut", mevsim: "yaz"},
+			{meyve: "mandalina", mevsim: "kış"},
+			{meyve: "portakal", mevsim: "kış"},
+			{meyve: "çilek", mevsim: "yaz"},
+			{meyve: "erik", mevsim: "yaz"},
+			{meyve: "üzüm", mevsim: "kış"}
+		];
+
+   //-------------- NORMAL KULLANIM İLE ARROW FUNCTION KULLANIMI--------------------
+
+    // var yazMeyveleri= dizi.filter((x)=>x.mevsim=="yaz");
+
+    // console.log(yazMeyveleri);
+
+    var yazMeyveleri=dizi.filter(function(x){
+      if(x.mevsim=="yaz"){
+        return true;
+      }      
+    })
+
+    console.log(yazMeyveleri);
+
+//-------------- NORMAL KULLANIM İLE ARROW FUNCTION KULLANIMI--------------------
+    var kısMeyveleri= dizi.filter((x)=>x.mevsim=="kış");
+
+    console.log(kısMeyveleri);
+
+    // var kısMeyveleri=dizi.filter(function(x){
+    //   if(x.mevsim=="kış"){
+    //     return true;
+    //   }      
+    // })
+    // console.log(kısMeyveleri);
+
+
+    </script>
+</body>
+</html>
