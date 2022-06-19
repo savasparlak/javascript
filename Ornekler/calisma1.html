@@ -57,7 +57,7 @@
     //normal function kullanarak yapımı
         console.log(result);
 
-        let sonuc=arr.map((elem)=>elem*2);
+        let sonuc=arr.map((elem)=> elem*2);
 
         console.log(sonuc);
         //arrow function kullanarak yapımı
@@ -75,9 +75,9 @@
 
         console.log(yil);
 
-        var yil = [1990, 2000, 2016, 1985, 2021].filter(x=>x>=2000);
+        var yil1 = [1990, 2000, 2016, 1985, 2021].filter(x=>x>=2000);
 
-        console.log(yil);
+        console.log(yil1);
 
         //---------------------------Bir Örnek--------------------------------
 
@@ -107,6 +107,38 @@
         });
 
         console.log("Dizinin içindeki değerler toplamı : " + sum1);
+
+        //-----------------------FILTER() ile MAP() fonksiyonlarının örnekleri--------------------
+        const urunler=[
+            {urunAdi:"iphone 11", fiyat:12000},
+            {urunAdi:"iphone 12", fiyat:15000},
+            {urunAdi:"iphone 13", fiyat:18000},
+            {urunAdi:"iphone 13 Pro", fiyat:22000}
+        ];
+
+        const sonuc1=urunler.map(urun=>urun);//diziyi aynen sonuc1 adındaki diziye kopyalar
+
+        const sonuc2=urunler.map(urun =>urun.urunAdi);
+        const sonuc3=urunler.filter(urun=>urun.fiyat>15000).map(urun=>urun.urunAdi);
+        //sonuc3'te fiyatı 15000'den büyük olan ürünlerin adlarını getiriyor. 
+
+        const sonuc4=urunler.find(urun=>urun.fiyat>12000);
+        //fiyatı 12000'den büyük olan ilk kaydı getirir.
+        const sonuc5=urunler.findIndex(urun=>urun.fiyat>12000);
+         //fiyatı 12000'den büyük olan ilk kaydın index değerini getirir.
+
+        console.log(sonuc1);
+        console.log(sonuc2);
+        console.log(sonuc3);
+        console.log(sonuc4);
+        console.log(sonuc5);//çıktı 1 olur.
+
+
+
+
+
+
+
 
     </script>
     

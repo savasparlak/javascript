@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    <script>
+    const msj=["benim", "adım", "savaş", "parlak"];
+
+    let cikti="";
+    for (let x of msj){
+        cikti+=x + " ";
+    }
+    console.log(cikti);
+    //aşağıdaki console.log(...msj) satırı yukarıda döngü ile yapılan işlemi tek satırda yapıyor.
+    //Bu işleme spread operatörü denmektedir.
+
+    console.log(...msj);
+
+    const array1=["bir","iki"];
+    const array2=["üç","dört"];
+    const array3= [...array1, ...array2, "beş","altı"];
+
+    console.log(array3); //yandaki satırda array3 dizisini ekrana çıktı olarak verir.
+    console.log(...array3);//yandaki dizi de ise üsttekinden farklı olarak dizinin elemanlarını
+    //yan yana basar yani >>>>> bir iki üç dört beş altı <<<<<< gibi...
+
+    const sayilar1=[1,2,3];
+    const sayilar2=sayilar1;//yanda sayilar1 dizisinin elemanlarını değil de 
+                            // referans adresini kopyalamış olduk.
+                        
+    const sayilar3=[...sayilar1];//yanda ise sayilar1 dizisinin değerlerini direk kopyalamış olduk.
+    
+    sayilar3[0]=10; // yandaki gibi bir değer ataması yapıldığında bu yalnızca sayilar3 dizisini bağlar
+                    // sayilar1 dizisinin ilk elemanının değerini değiştirmez.
+         
+    console.log(sayilar1, sayilar3); 
+
+    sayilar2[0]=10; //yanda ise yukarıda sayilar1'in referans adresini kopyaladığımız için sayilar2
+                    //dizisi içerisinde yapılan herhangi bir değişiklik sayilar1 dizisini de etkiler. 
+    
+    console.log(sayilar1, sayilar2);                
+
+
+
+
+
+
+    </script>
+</body>
+</html>
