@@ -40,14 +40,89 @@
          
     console.log(sayilar1, sayilar3); 
 
-    sayilar2[0]=10; //yanda ise yukarıda sayilar1'in referans adresini kopyaladığımız için sayilar2
+    sayilar2[0]=25; //yanda ise yukarıda sayilar1'in referans adresini kopyaladığımız için sayilar2
                     //dizisi içerisinde yapılan herhangi bir değişiklik sayilar1 dizisini de etkiler. 
     
+    console.log(sayilar1, sayilar3); 
     console.log(sayilar1, sayilar2);                
 
+//----------------------------------------------------------------------------------------------------
+
+    const user = {
+        username:  "savasparlak",
+        email:"info@gmail.com"
+    }
+
+    const address ={
+        username: "abc",
+        city:"istanbul"
+    }
+
+    console.log({...user,...address});
+//yukarıdaki satır user ve address objelerini birleştirmiş ve address objesinin 
+//bir elemanı olan username ise user objesinin içindeki username ismini 
+//ezerek 'abc' olarak güncellenmiştir.
+
+    //rest parameters
+    function toplam(...args){
+        let sonuc=0;
+
+        for(let sayi of args){
+            sonuc+=sayi;
+        }
+        return sonuc;
+    }
+
+    console.log(toplam(1,3,5));
+    console.log(toplam(1,3,5,10));
+
+    function bilgileriGoster(isim, soyad, ...adres){
+        console.log(isim,soyad,adres);
+    }
+
+    bilgileriGoster("savaş","parlak","istanbul","ataşehir","esatpaşa");
 
 
+    //array destructuring--dizi şeklini bozma
 
+    let name=["sadık","turan","kocaeli","izmit","41000"];
+    let name1=["sadık","turan"];
+
+    //let [firstName, lastName]=name1; name1 içindeki elemanlar direk firstName ile lastName içine atanır
+    console.log(name1); // ve bu satırda ise name1 dizi şeklinde çıktı verir. yani ['sadık','turan'] çıktısını verir.
+
+    let [ad, soyad]="Savaş Parlak".split(" ");
+    console.log(ad, soyad); // Savaş Parlak çıktısını verir
+
+    let [firstName, lastName, ...adres]=name; //name dizisinin ilk iki elemanı direk yandaki dizinin ilk iki elemanına kopyalandı
+                                              // name dizisinin son 3 elemanı da adres değişkenine dizi olarak kopyalandı.
+    console.log(firstName, lastName,adres); //  sadık turan  ["kocaeli","izmit","41000"] şeklinde bir çıktı üretilir.
+
+    //object destructuring--obje şeklini bozma
+
+    let urun={
+        marka:"Apple",
+        model:"IPhone 13",
+        fiyat:20000
+    }
+    
+    let {marka, model, fiyat}=urun;
+
+    console.log(marka,model,fiyat);// Apple IPhone 13 20000 çıktısını verir.        
+    
+    //--------------------------------------------------------------
+    let urun1={
+        marka:"Apple",
+        model:"IPhone 13",
+        
+    }
+
+    function urunGoster(obj){
+        let{marka,model,fiyat=0,satisDurumu=false}=urun1;
+        console.log(marka,model,fiyat,satisDurumu);
+    }
+    //yukardaki fonksiyon içinde marka, model bilgileri objeden kopyalandı ancak fiyat ve satisDurumu varsaylan olarak değer verildi
+    urunGoster(urun1); // Apple IPhone 13 0 false çıktısı üretilir. 
 
 
     </script>
